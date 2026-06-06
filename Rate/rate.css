@@ -1,0 +1,311 @@
+/* =========== SITE RATING PAGE SPECIFIC STYLES =========== */
+.site-rating-page main {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+.site-rating-page main header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(189,192,7,0.1) 100%);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.1);
+  position:relative;
+}
+
+.site-rating-page main header h1 {
+  color: var(--accent);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.site-rating-page main header p {
+  font-size: 1.2rem;
+  color: var(--text);
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* Section Styling */
+.site-rating-page section[aria-labelledby] {
+  background: rgba(255,255,255,0.03);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.site-rating-page section h2 {
+  color: var(--accent);
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--accent);
+  display: inline-block;
+}
+
+/* Form Styling */
+.site-rating-page form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.site-rating-page fieldset {
+  border: 2px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 1.5rem;
+  background: rgba(255,255,255,0.02);
+}
+
+.site-rating-page legend {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 1.2rem;
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Radio Button Styling */
+.site-rating-page fieldset label {
+  display: flex;
+  align-items: center;
+  margin: 0.8rem 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+  border-radius: 6px;
+}
+
+.site-rating-page fieldset label:hover {
+  background: rgba(189,192,7,0.1);
+  transform: translateX(5px);
+}
+
+.site-rating-page fieldset input[type="radio"] {
+  margin-right: 1rem;
+  transform: scale(1.2);
+  accent-color: var(--accent);
+}
+
+/* Textarea Styling */
+.site-rating-page textarea {
+  width: 100%;
+  min-height: 150px;
+  padding: 1rem;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.08);
+  color: var(--text);
+  font-family: 'Lexend', sans-serif;
+  font-size: 1rem;
+  resize: vertical;
+  transition: all 0.3s ease;
+  line-height: 1.6;
+}
+
+.site-rating-page textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: rgba(255,255,255,0.12);
+  box-shadow: 0 0 0 3px rgba(189,192,7,0.2);
+}
+
+.site-rating-page textarea::placeholder {
+  color: rgba(255,255,255,0.4);
+  font-style: italic;
+}
+
+/* Input Field Styling */
+.site-rating-page input[type="text"],
+.site-rating-page input[type="email"] {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.8rem 1rem;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 6px;
+  background: rgba(255,255,255,0.08);
+  color: var(--text);
+  font-family: 'Lexend', sans-serif;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.site-rating-page input[type="text"]:focus,
+.site-rating-page input[type="email"]:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: rgba(255,255,255,0.12);
+  box-shadow: 0 0 0 3px rgba(189,192,7,0.2);
+}
+
+.site-rating-page input::placeholder {
+  color: rgba(255,255,255,0.4);
+}
+
+/* Label Styling */
+.site-rating-page label {
+  color: var(--text);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+/* Submit Button Styling */
+.site-rating-page form footer {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.site-rating-page button[type="submit"] {
+  background: linear-gradient(135deg, var(--accent), var(--navhover));
+  color: var(--background);
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+.site-rating-page button[type="submit"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.5s;
+}
+
+.site-rating-page button[type="submit"]:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(189,192,7,0.4);
+}
+
+.site-rating-page button[type="submit"]:hover::before {
+  left: 100%;
+}
+
+.site-rating-page button[type="submit"]:active {
+  transform: translateY(-1px);
+}
+
+/* Thank You Section */
+.site-rating-page section[aria-labelledby="thank-you"] {
+  text-align: center;
+  background: linear-gradient(135deg, rgba(189,192,7,0.1) 0%, rgba(133,105,5,0.1) 100%);
+  border: 1px solid rgba(189,192,7,0.2);
+}
+
+.site-rating-page section[aria-labelledby="thank-you"] h2 {
+  color: var(--accent);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.site-rating-page section[aria-labelledby="thank-you"] p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text);
+  opacity: 0.9;
+}
+
+/* Responsive Design for Site Rating Page Only */
+@media (max-width: 768px) {
+  .site-rating-page main {
+    margin: 1rem auto;
+    padding: 0 1rem;
+  }
+  
+  .site-rating-page main header {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .site-rating-page main header h1 {
+    font-size: 2rem;
+  }
+  
+  .site-rating-page main header p {
+    font-size: 1.1rem;
+  }
+  
+  .site-rating-page section[aria-labelledby] {
+    padding: 1.5rem;
+  }
+  
+  .site-rating-page section h2 {
+    font-size: 1.5rem;
+  }
+  
+  .site-rating-page fieldset {
+    padding: 1rem;
+  }
+  
+  .site-rating-page textarea {
+    min-height: 120px;
+  }
+  
+  .site-rating-page button[type="submit"] {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-rating-page main header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .site-rating-page main header p {
+    font-size: 1rem;
+  }
+  
+  .site-rating-page section[aria-labelledby] {
+    padding: 1rem;
+  }
+  
+  .site-rating-page fieldset {
+    padding: 0.8rem;
+  }
+  
+  .site-rating-page legend {
+    font-size: 1.1rem;
+  }
+  
+  .site-rating-page fieldset label {
+    font-size: 0.9rem;
+  }
+}
+
+.flash-message {
+  text-align: center;
+  font-weight: 600;
+  margin: 1em auto;
+  padding: 1em;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 600px;
+}
+
+.flash-message.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.flash-message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}

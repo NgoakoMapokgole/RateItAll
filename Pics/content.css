@@ -1,0 +1,549 @@
+/* ====================================== MEDIA PAGE SPECIFIC STYLES =========================================== */
+
+/* =========== MAIN CONTENT AREA =========== */
+main {
+  max-width: 1200px;
+  margin: 120px auto 2rem; /* Account for fixed header */
+  padding: 0 1rem;
+  color: var(--text);
+}
+
+/* =========== HERO SECTION =========== */
+main > section:first-of-type {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(189,192,7,0.02) 100%);
+  border-radius: 12px;
+  margin-bottom: 3rem;
+}
+
+main > section:first-of-type h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+main > section:first-of-type img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+/* =========== SECTION HEADINGS =========== */
+main h2 {
+  color: var(--text);
+  font-size: 2rem;
+  margin: 3rem 0 1.5rem;
+  text-align: center;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+main h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+/* =========== FAN FAVORITES SECTION (ORDERED LIST) =========== */
+#Top-media {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin: 2rem 0;
+  padding: 2rem;
+  background: rgba(255,255,255,0.03);
+  border-radius: 12px;
+}
+
+#Top-media p {
+  font-size: 1.2rem;
+  color: var(--accent);
+  font-weight: bold;
+  writing-mode: vertical-rl; /* Vertical text for arrows */
+  transform: rotate(180deg);
+}
+
+#Top-media article {
+  flex: 1;
+}
+
+/* =========== ORDERED LIST STYLING (CSS Lists #1) =========== */
+#Top-media ol {
+  list-style: none;
+  counter-reset: media-counter;
+  padding: 0;
+  margin: 0;
+}
+
+#Top-media li {
+  counter-increment: media-counter;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: rgba(255,255,255,0.05);
+  border-radius: 8px;
+  border-left: 4px solid var(--accent);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+#Top-media li:hover {
+  transform: translateX(10px);
+  background: rgba(189,192,7,0.1);
+}
+
+#Top-media li::before {
+  content: counter(media-counter);
+  background: var(--accent);
+  color: var(--background);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  font-weight: bold;
+}
+
+/* =========== FAN FAVORITES SECTION (HORIZONTAL GRID) =========== */
+#Top-media {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0;
+  padding: 2rem;
+  background: rgba(255,255,255,0.03);
+  border-radius: 12px;
+  position: relative;
+}
+
+/* Remove the left/right text arrows since we're making a grid */
+#Top-media > p {
+  display: none; /* Hide the left/right indicators */
+}
+
+#Top-media article {
+  width: 100%;
+}
+
+/* =========== HORIZONTAL GRID LAYOUT =========== */
+#Top-media ol {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  list-style: none;
+  counter-reset: media-counter;
+  padding: 0;
+  margin: 0;
+}
+
+#Top-media li {
+  counter-increment: media-counter;
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+#Top-media li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(189,192,7,0.2);
+  border-color: var(--accent);
+}
+
+/* Number badge */
+#Top-media li::before {
+  content: counter(media-counter);
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent);
+  color: var(--background);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+  z-index: 2;
+}
+
+/* Image styling */
+#Top-media img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+#Top-media a:hover img {
+  border-color: var(--accent);
+}
+
+/* Label/text styling */
+#Top-media label {
+  display: block;
+  text-align: center;
+  font-size: 1rem;
+  color: var(--text);
+  line-height: 1.4;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+/* Link styling */
+#Top-media a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* Remove the <br> spacing since we're using proper CSS layout */
+#Top-media br {
+  display: none;
+}
+
+
+/* =========== TABLES STYLING (CSS Tables) =========== */
+main table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  background: rgba(255,255,255,0.03);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Table #1: Basic table styling */
+main table th {
+  background: var(--accent);
+  color: var(--background);
+  padding: 1rem;
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+main table td {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  vertical-align: middle;
+}
+
+main table tr:hover {
+  background: rgba(189,192,7,0.05);
+}
+
+main table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Table #2: Progress bar styling within tables */
+main table progress {
+  width: 100%;
+  height: 20px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255,255,255,0.1);
+}
+
+main table progress::-webkit-progress-bar {
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+}
+
+main table progress::-webkit-progress-value {
+  background: linear-gradient(90deg, var(--accent), var(--primary));
+  border-radius: 10px;
+}
+
+main table progress::-moz-progress-bar {
+  background: linear-gradient(90deg, var(--accent), var(--primary));
+  border-radius: 10px;
+}
+
+/* Table #3: Image styling within tables */
+main table img {
+  width: 100px;
+  height: auto;
+  border-radius: 6px;
+  border: 2px solid rgba(255,255,255,0.1);
+  transition: transform 0.3s ease;
+}
+
+main table img:hover {
+  transform: scale(1.1);
+}
+
+/* =========== FORMS STYLING (CSS Forms) =========== */
+main form {
+  background: rgba(255,255,255,0.03);
+  padding: 2rem;
+  border-radius: 12px;
+  margin: 2rem 0;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Form #1: Label styling */
+main form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Form #2: Input field styling */
+main form input[type="email"],
+main form textarea {
+  width: 100%;
+  max-width: 500px;
+  padding: 0.75rem;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 6px;
+  background: rgba(255,255,255,0.05);
+  color: var(--text);
+  font-family: 'Lexend';
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+main form input[type="email"]:focus,
+main form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(189,192,7,0.3);
+}
+
+main form input[type="email"]::placeholder,
+main form textarea::placeholder {
+  color: rgba(255,255,255,0.5);
+}
+
+/* Form #3: Radio button styling */
+main form section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+main form section label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255,255,255,0.05);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+main form section label:hover {
+  background: rgba(189,192,7,0.1);
+}
+
+main form input[type="radio"] {
+  accent-color: var(--accent);
+  transform: scale(1.2);
+}
+
+/* Submit button styling */
+main form button {
+  background: linear-gradient(135deg, var(--accent), var(--primary));
+  color: var(--background);
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+main form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(189,192,7,0.3);
+}
+
+/* =========== UNORDERED LIST STYLING (CSS Lists #2) =========== */
+main ul {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+}
+
+main ul li {
+  padding: 1rem;
+  margin: 0.5rem 0;
+  background: rgba(255,255,255,0.03);
+  border-radius: 6px;
+  border-left: 4px solid var(--primary);
+  transition: transform 0.3s ease;
+}
+
+main ul li:hover {
+  transform: translateX(5px);
+  background: rgba(242,31,7,0.1);
+}
+
+/* =========== DEFINITION LIST STYLING (CSS Lists #3) =========== */
+main dl {
+  margin: 2rem 0;
+  background: rgba(255,255,255,0.03);
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+main dt {
+  color: var(--accent);
+  font-weight: bold;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+
+main dd {
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+  padding: 0.5rem;
+  background: rgba(255,255,255,0.02);
+  border-radius: 4px;
+}
+
+/* =========== ADDITIONAL LINK STYLES (CSS Links #2 & #3) =========== */
+/* Link style #2: Text links with underline animation */
+main a.text-link {
+  color: var(--accent);
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+main a.text-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+main a.text-link:hover::after {
+  width: 100%;
+}
+
+/* Link style #3: Button links */
+main a.button-link {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  background: var(--accent);
+  color: var(--background);
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+main a.button-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(189,192,7,0.3);
+}
+
+/* =========== FILE PATH DEMONSTRATIONS =========== */
+
+
+/* Relative path to images in same directory */
+.relative-path {
+  background: url('images/media.jpg');
+}
+
+/* Relative path to images in parent directory */
+.parent-path {
+  background: url('../images/featured.jpg');
+}
+
+/* Relative path to images in subdirectory */
+.subdirectory-path {
+  background: url('assets/images/thumbnails/poster.jpg');
+}
+
+/* Root-relative path (from site root) */
+.root-path {
+  background: url('/images/site-logo.png');
+}
+
+/* =========== RESPONSIVE DESIGN =========== */
+@media (max-width: 768px) {
+  main {
+    margin-top: 100px;
+    padding: 0 0.5rem;
+  }
+  
+  #Top-media {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  #Top-media p {
+    writing-mode: horizontal-tb;
+    transform: none;
+    margin: 1rem 0;
+  }
+  
+  main table {
+    font-size: 0.9rem;
+  }
+  
+  main table th,
+  main table td {
+    padding: 0.5rem;
+  }
+  
+  main form section {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  main h2 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  main table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  #Top-media li {
+    text-align: center;
+  }
+  
+  #Top-media li::before {
+    margin: 0 auto 0.5rem;
+    display: flex;
+  }
+}
